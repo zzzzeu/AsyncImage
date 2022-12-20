@@ -7,11 +7,13 @@ final class ImageLoader: ObservableObject {
     @Published var asyncImagePhase = AsyncImagePhase.empty
     let scale: CGFloat
     let url: URL?
+    let processor: ImageProcessor?
     var downloadTask: DownloadTask?
     
-    init(url: URL?, scale: CGFloat) {
+    init(url: URL?, scale: CGFloat, processor: ImageProcessor?) {
         self.url = url
         self.scale = scale
+        self.processor = processor
     }
     
     deinit {}
@@ -25,6 +27,11 @@ final class ImageLoader: ObservableObject {
                 guard let self = self else { return }
                 switch result {
                 case .success(let image):
+                    var image = image
+                    if let processor = self.processor {
+                        // Processing the fetched image here to keep the cached image untouched.
+                        image = processor.process(image: image)
+                    }
                     self.asyncImagePhase = .success(Image(uiImage: image))
                 case .failure(let error):
                     if error.isCanceled { return }

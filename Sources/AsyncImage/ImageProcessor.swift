@@ -5,4 +5,8 @@
 //  Created by Fabian Thies on 20.12.22.
 //
 
-import Foundation
+import UIKit
+
+public protocol ImageProcessor {
+    func process(image: UIImage) -> UIImage
+}
