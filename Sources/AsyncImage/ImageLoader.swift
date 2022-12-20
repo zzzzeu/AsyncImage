@@ -14,9 +14,7 @@ final class ImageLoader: ObservableObject {
         self.scale = scale
     }
     
-    deinit {
-        print(true)
-    }
+    deinit {}
     
     func loadImage() {
         guard let url = url, asyncImagePhase.image == nil else { return }
