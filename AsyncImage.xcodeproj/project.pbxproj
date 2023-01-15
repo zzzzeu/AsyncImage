@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		1F6284DD29525A5E0060AAD8 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6284DC29525A5E0060AAD8 /* ImageProcessor.swift */; };
 		D4B7E90A2676204F006271B3 /* AsyncImageDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B7E9092676204F006271B3 /* AsyncImageDemoApp.swift */; };
 		D4B7E90C2676204F006271B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B7E90B2676204F006271B3 /* ContentView.swift */; };
 		D4B7E90E26762050006271B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B7E90D26762050006271B3 /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F6284DC29525A5E0060AAD8 /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		"AsyncImage::AsyncImage::Product" /* AsyncImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AsyncImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"AsyncImage::AsyncImageTests::Product" /* AsyncImageTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AsyncImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B7E9072676204F006271B3 /* AsyncImageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncImageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +209,7 @@
 				OBJ_9 /* AsyncImage.swift */,
 				OBJ_10 /* ImageLoader.swift */,
 				OBJ_11 /* ImageService.swift */,
+				1F6284DC29525A5E0060AAD8 /* ImageProcessor.swift */,
 				D4B7E93F26774B8F006271B3 /* SessionDelegate.swift */,
 				D4B7E93126766DB2006271B3 /* DataTask.swift */,
 				OBJ_12 /* LRUCache.swift */,
@@ -351,6 +354,7 @@
 				D4B7E94026774B8F006271B3 /* SessionDelegate.swift in Sources */,
 				OBJ_26 /* AsyncImage.swift in Sources */,
 				OBJ_27 /* ImageLoader.swift in Sources */,
+				1F6284DD29525A5E0060AAD8 /* ImageProcessor.swift in Sources */,
 				OBJ_28 /* ImageService.swift in Sources */,
 				OBJ_29 /* LRUCache.swift in Sources */,
 			);

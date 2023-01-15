@@ -37,17 +37,18 @@ public struct AsyncImage<Content: View>: View {
             .onDisappear { loader.cancelDownload() }
     }
     
-    public init(url: URL, scale: CGFloat = 1) where Content == Image {
-        loader = ImageLoader(url: url, scale: scale)
+    public init(url: URL, scale: CGFloat = 1, processor: ImageProcessor? = nil) where Content == Image {
+        loader = ImageLoader(url: url, scale: scale, processor: processor)
     }
     
     public init<I: View, P: View>(
         url: URL?,
         scale: CGFloat = 1,
+        processor: ImageProcessor? = nil,
         content: @escaping (Image) -> I,
         placeholder: @escaping () -> P
     ) where Content == _ConditionalContent<I, P> {
-        self.init(url: url, scale: scale) { phase in
+        self.init(url: url, scale: scale, processor: processor) { phase in
             if let image = phase.image {
                 content(image)
             } else {
@@ -59,10 +60,11 @@ public struct AsyncImage<Content: View>: View {
     public init(
         url: URL?,
         scale: CGFloat = 1,
+        processor: ImageProcessor? = nil,
         transaction: Transaction = Transaction(),
         @ViewBuilder content: @escaping (AsyncImagePhase) -> Content
     ) {
         self.content = content
-        loader = ImageLoader(url: url, scale: scale)
+        loader = ImageLoader(url: url, scale: scale, processor: processor)
     }
 }
